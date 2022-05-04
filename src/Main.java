@@ -9,7 +9,13 @@ public class Main {
         System.out.println("Данные ФИО сотрудника для заполнения отчета — " + fullNameUpperCase);
         System.out.println("\nЗадание 3");
         fullName = "Иванов Семён Семёнович";
-        String fullNameE = fullName.replace('ё', 'е');
-        System.out.println("Данные ФИО сотрудника — " + fullNameE);
+        String[] fullNameWords = fullName.split(" ");
+        System.out.print("Данные ФИО сотрудника —");
+        for (int i = 0; i < fullNameWords.length; i++) {
+            if (fullNameWords[i].contains("ё")) {
+                fullNameWords[i] = fullNameWords[i].replace('ё','е');
+            }
+            System.out.print(" " + fullNameWords[i]);
+        }
     }
 }
